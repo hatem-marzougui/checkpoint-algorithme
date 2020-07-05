@@ -1,0 +1,40 @@
+ALGORITHM sentence_count
+VAR   
+    sentence :STRING
+    nb-charact:=0,nb-vowels:=0,nb-word:=0,nb-space:=0 :INTEGER
+    j:=0,i:=0 :INTEGER
+
+BEGIN
+ write ("enter a sentence:")
+ read (sentence)
+
+//The length of the sentence (the number of characters)
+    WHILE (sentence[i]!='.') DO
+        i:=i+1
+    END_WHILE
+    nb-charact:=i
+    write ("length of the sentence:", nb-charact)
+
+//The number of words in the sentence
+    FOR i FROM 0 TO nb-charact-1 STEP 1  DO
+        IF (char[i]= ' ') THEN
+           nb-space:= nb-space + 1
+        END_IF  
+    END_FOR
+  nb-words=nb-space+1
+  write ("number of words",nb-words)
+
+//The number of vowels 
+  FOR j FROM 0 TO nb-charact-1 STEP 1  DO
+      SWITCH (sentence[j]) DO
+    case "a" : 
+    case "e" : 
+    case "i" : 
+    case "o" : 
+    case "u" : 
+    case "y" : nb-vowels=nb-vowels + 1
+END_SWITCH
+  END_FOR
+  write ("number of vowels:", nb-vowels)
+
+END
